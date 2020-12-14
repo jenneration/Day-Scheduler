@@ -1,8 +1,13 @@
-//ON LOAD
-//display current day and date
+//VARIABLES
+//On page load display current day and date
 var today = dayjs().format("dddd, MMMM D, YYYY");
 $("#currentDay").text(today);
 
+var time = dayjs().format("h:m");
+console.log(time);
+console.log(dayjs().hour());
+
+//Time slot
 var apptBlocks = [
   {
     hour: "9am",
@@ -50,12 +55,29 @@ var apptBlocks = [
     timeMarker: 17,
   },
 ];
-console.log(apptBlocks);
+
+//ELEMENTS
+var button = $("button");
+
+//TODO: JSON KEY = appointments
+//LS-GET Checks local storage for previous scores
+var storedAppts = JSON.parse(localStorage.getItem("keyAppts"));
+console.log(storedAppts);
+
+//LS-SET
+saveAppointments();
+function saveAppointments() {
+  localStorage.setItem("keyAppts", JSON.stringify(apptBlocks));
+}
+
+//PAGE RENDER/-ok////////////////////////////////////////////////
 
 for (var i = 0; i < apptBlocks.length; i++) {
-  //Creates row div for every array object
+  //Creates row div for every array object, set "data-hour"
   var sectionDiv = $("<section>");
   sectionDiv.addClass("row row-jg time-block");
+  sectionDiv.attr("data-hour", i);
+  //console.log("data-hour");
   $(".container").append(sectionDiv);
 
   //Create row grid spaces
@@ -78,9 +100,22 @@ for (var i = 0; i < apptBlocks.length; i++) {
       saveBtn.addClass(
         "col-2 col-lg-1 btn btn-block saveBtn d-flex justify-content-center align-items-center"
       );
+      saveBtn.attr("data-hour", i);
       saveBtn.append("<img class='img-fluid' src='assets/save-icon.png'>");
-
+      //Append elements to sectionDiv
       $(sectionDiv).append(hrBlock, textBlock, saveBtn);
     }
   }
 }
+////////////////
+
+//BUTTON tied to data-hour - ok
+$(".container").on("click", function (event) {
+  //event.preventDefault();
+  var target = $(event.target);
+  targetData = target.attr("data-hour");
+  // event.stopPropagation();
+  console.log(targetData);
+});
+
+////////////////
