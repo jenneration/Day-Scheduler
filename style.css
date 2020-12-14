@@ -6,7 +6,7 @@ body {
 
 textarea {
   background: transparent;
-  border: none;
+  border: solid lightgrey 1px;
   resize: none;
   color: #000000;
   border-left: 1px solid black;
@@ -61,11 +61,27 @@ textarea {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06aed5;
+  background-color: beige;
   color: white;
 }
 
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+.saveBtn image {
+  width: 20px;
+}
+
+/* .row-jg {
+  background-color: pink;
+} */
+
+.col-jg {
+  background-color: yellow;
+}
+
+img {
+  width: 17px;
 }
