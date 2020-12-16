@@ -1,7 +1,12 @@
+/* font-family: 'Dancing Script', cursive;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 1;
+  background-color: #f8f8ff;
 }
 
 textarea {
@@ -11,6 +16,24 @@ textarea {
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
+  font-weight: bold;
+}
+
+.display-3-jg {
+  font-family: "Dancing Script", cursive;
+  font-size: 6rem;
+  color: #fc438d;
+}
+
+#currentDay {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  color: #4cc9f0;
+}
+
+.row-jg {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
 }
 
 .jumbotron {
@@ -19,6 +42,8 @@ textarea {
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
+  margin-bottom: 0;
+  padding-bottom: 30px;
 }
 
 .description {
@@ -37,23 +62,23 @@ textarea {
 }
 
 .hour {
-  background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
+  color: #495057;
+  border-top: 1px dashed #495057;
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color: #adb5bd;
   color: white;
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: #fc438d;
   color: white;
 }
 
 .future {
-  background-color: #77dd77;
+  /* background-color: #7bf1a8; */
+  background-color: #afe3c0;
   color: white;
 }
 
@@ -62,7 +87,7 @@ textarea {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: beige;
-  color: white;
+  color: #495057;
 }
 
 .saveBtn i:hover {
@@ -74,14 +99,24 @@ textarea {
   width: 20px;
 }
 
-/* .row-jg {
-  background-color: pink;
-} */
-
 .col-jg {
   background-color: yellow;
 }
 
 img {
   width: 17px;
+}
+
+.btnDiv {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 250px;
+}
+
+.btn-jg {
+  color: #fff;
+}
+
+.btn-jg {
+  background-color: #4cc9f0;
 }
